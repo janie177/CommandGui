@@ -2,3 +2,9 @@ main: com.minegusta.commandgui.Main
 name: CommandGui
 version: ${project.version}
 author: janie177
+
+commands:
+   gui:
+      description: The Command Help Menu.
+      usage: /GUI
+      aliases: [command, menu, mg, command, cmd, cmds]
