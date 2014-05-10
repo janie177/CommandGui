@@ -7,6 +7,7 @@ public class ConfigHandler
 {
 	public static void createConfig()
 	{
+		Main.PLUGIN.getConfig().options().copyDefaults(true);
 		Main.PLUGIN.saveDefaultConfig();
 	}
 

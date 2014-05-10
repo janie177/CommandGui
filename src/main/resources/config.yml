@@ -1,0 +1,6 @@
+spawn:
+   description: 'Teleport to the spawn.'
+   permissions-node: 'commandbook.spawn'
+   name: 'Spawn'
+   command: 'spawn'
+   item: 345
