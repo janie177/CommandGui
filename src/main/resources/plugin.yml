@@ -1,0 +1,4 @@
+main: com.minegusta.commandgui.Main
+name: CommandGui
+version: ${project.version}
+author: janie177
