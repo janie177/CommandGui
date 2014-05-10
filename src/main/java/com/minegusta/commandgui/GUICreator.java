@@ -22,6 +22,7 @@ public class GUICreator
 		int count = 0;
 		Set<String> keys = getConfig().getKeys(false);
 		Inventory inv = createInventory(keys.size());
+		p.openInventory(inv);
 		for(String s : keys)
 		{
 			if(!(hasPerm(s, p)) || !(hasData(s)))return;
@@ -36,7 +37,6 @@ public class GUICreator
 
 			inv.setItem(count, itemToAdd);
 			count++;
-			p.openInventory(inv);
 		}
 
 	}
@@ -72,6 +72,6 @@ public class GUICreator
 			slots = 27;
 		}
 
-		return Bukkit.createInventory(null, slots, ChatColor.GOLD + "Minegusta Command GUI");
+		return Bukkit.createInventory(null, slots, ChatColor.RED + "Minegusta Command GUI");
 	}
 }

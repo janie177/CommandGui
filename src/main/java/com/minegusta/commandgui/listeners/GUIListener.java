@@ -19,14 +19,15 @@ public class GUIListener implements Listener
 		InventoryListener inv = InventoryListener.listen(e);
 
 		if(!inv.isGUIMenu())return;
-		if(!inv.isNotAir())
+		else if(!inv.isNotAir())
 		{
 			inv.cancel();
-			return;
+			inv.getPlayer().updateInventory();
 		}
-		if(!inv.hasNoItem())
+		else if(!inv.hasNoItem())
 		{
 			inv.cancel();
+			inv.getPlayer().updateInventory();
 		}
 		else
 		{
