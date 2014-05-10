@@ -44,7 +44,7 @@ public class GUIListener implements Listener
 		ItemStack s = p.getItemInHand();
 		Material m = s.getType();
 
-		if(!(m.equals(Material.EMPTY_MAP) && s.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "Command Helper")))return;
+		if(!(m.equals(Material.WATCH) && s.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "Command Helper")))return;
 		if(e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK))
 		{
 			GUICreator.createGUI(p);

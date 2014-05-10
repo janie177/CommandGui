@@ -36,6 +36,7 @@ public class GUICreator
 
 			inv.setItem(count, itemToAdd);
 			count++;
+			p.openInventory(inv);
 		}
 
 	}
