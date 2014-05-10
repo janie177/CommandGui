@@ -12,7 +12,7 @@ home:
 sethome:
    description: 'Set your home here.'
    name: 'Set Home'
-   command: 'spawn'
+   command: 'sethome'
    item: 355
 fhome:
    description: 'Teleport to your faction home.'
