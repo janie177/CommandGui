@@ -22,7 +22,6 @@ public class GUICreator
 		int count = 0;
 		Set<String> keys = getConfig().getKeys(false);
 		Inventory inv = createInventory(keys.size());
-		p.openInventory(inv);
 		for(String s : keys)
 		{
 			if(!(hasPerm(s, p)) || !(hasData(s)))return;
@@ -38,6 +37,7 @@ public class GUICreator
 			inv.setItem(count, itemToAdd);
 			count++;
 		}
+		p.openInventory(inv);
 
 	}
 

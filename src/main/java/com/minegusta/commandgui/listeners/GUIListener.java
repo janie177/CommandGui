@@ -1,6 +1,7 @@
 package com.minegusta.commandgui.listeners;
 
 import com.minegusta.commandgui.GUICreator;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,7 +19,7 @@ public class GUIListener implements Listener
 	{
 		InventoryListener inv = InventoryListener.listen(e);
 
-		if(!inv.isGUIMenu())return;
+		if(!inv.isGUIMenu()){return;}
 		else if(!inv.isNotAir())
 		{
 			inv.cancel();

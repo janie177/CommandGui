@@ -1,6 +1,7 @@
 package com.minegusta.commandgui.listeners;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -64,7 +65,7 @@ public class InventoryListener
 
 	public boolean hasNoItem()
 	{
-		return e.getCursor() == null;
+		return e.getCursor() != null && e.getCursor().getType().equals(Material.AIR);
 	}
 
 	public void closeInv()
