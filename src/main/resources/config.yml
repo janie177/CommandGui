@@ -1,6 +1,46 @@
 spawn:
    description: 'Teleport to the spawn.'
    permissions-node: 'commandbook.spawn'
-   name: 'Spawn'
+   name: 'Spawn Teleport'
    command: 'spawn'
    item: 345
+home:
+   description: 'Teleport to your home.'
+   name: 'Home Teleport'
+   command: 'home'
+   item: 368
+sethome:
+   description: 'Set your home here.'
+   name: 'Set Home'
+   command: 'spawn'
+   item: 355
+fhome:
+   description: 'Teleport to your faction home.'
+   name: 'Faction Home'
+   command: 'f home'
+   item: 347
+kit:
+   description: 'Show all kits.'
+   name: 'Kits'
+   command: 'kit'
+   item: 130
+money:
+   description: 'Show how much cash you have.'
+   name: 'Money'
+   command: 'money'
+   item: 266
+color:
+   description: 'Show color codes.'
+   name: 'Colors'
+   command: 'color'
+   item: 399
+pop:
+   description: 'Enable/Disable POP mode.'
+   name: 'POP!'
+   command: 'pop'
+   item: 398
+vote:
+   description: 'Show where to vote or redeem vote points.'
+   name: 'Vote/Redeem'
+   command: 'vote'
+   item: 264

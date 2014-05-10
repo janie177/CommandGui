@@ -42,7 +42,7 @@ public class InventoryListener
 		{
 			if(s.contains((ChatColor.YELLOW + "Command: ")))
 			{
-				command = s.replace(ChatColor.YELLOW + "Command: ", "");
+				command = s.replace(ChatColor.YELLOW + "Command: " + ChatColor.GRAY, "");
 			}
 		}
 		return command;
