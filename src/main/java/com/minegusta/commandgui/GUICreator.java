@@ -72,6 +72,6 @@ public class GUICreator
 			slots = 27;
 		}
 
-		return Bukkit.createInventory(null, slots, ChatColor.RED + "Minegusta Command GUI");
+		return Bukkit.createInventory(null, slots, ChatColor.RED + "MG-DG Command GUI");
 	}
 }

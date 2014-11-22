@@ -34,8 +34,7 @@ public class GUIListener implements Listener
 		{
 			inv.cancel();
 			inv.closeInv();
-
-			inv.getPlayer().chat("/" + inv.getCommand());
+			Bukkit.dispatchCommand(inv.getPlayer(), inv.getCommand());
 		}
 	}
 
