@@ -18,12 +18,12 @@ public class GUIItem
 	private Location destination;
 	private int slot;
 
-	public GUIItem(String name, Material material, String description, World w, int x, int y, int z, int slot)
+	public GUIItem(String name, Material material, String description, World w, int x, int y, int z, int pitch, int yaw, int slot)
 	{
 		this.name = name;
 		this.material = material;
 		this.desc = description;
-		this.destination = new Location(w, x, y, z);
+		this.destination = new Location(w, x, y, z, yaw, pitch);
 		this.slot = slot;
 	}
 

@@ -18,6 +18,8 @@ public class Manager
         ConfigHandler.getConfig().set(s + ".x", (int) item.getLocation().getX());
         ConfigHandler.getConfig().set(s + ".y", (int) item.getLocation().getY());
         ConfigHandler.getConfig().set(s + ".z", (int) item.getLocation().getZ());
+        ConfigHandler.getConfig().set(s + ".pitch", (int) item.getLocation().getPitch());
+        ConfigHandler.getConfig().set(s + ".yaw", (int) item.getLocation().getYaw());
         ConfigHandler.getConfig().set(s + ".slot", item.slot());
 
         ConfigHandler.saveConfig();

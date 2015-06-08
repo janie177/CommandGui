@@ -33,9 +33,11 @@ public class Items
             int x = ConfigHandler.getConfig().getInt(s + ".x");
             int y = ConfigHandler.getConfig().getInt(s + ".y");
             int z = ConfigHandler.getConfig().getInt(s + ".z");
+            int pitch = ConfigHandler.getConfig().getInt(s + ".pitch");
+            int yaw = ConfigHandler.getConfig().getInt(s + ".yaw");
             int slot = ConfigHandler.getConfig().getInt(s + ".slot");
 
-            GUIItem item = new GUIItem(name, material, desc, world, x, y, z, slot);
+            GUIItem item = new GUIItem(name, material, desc, world, x, y, z, pitch, yaw, slot);
 
             guiObjects.put(ChatColor.translateAlternateColorCodes('&', item.name()), item);
         }
@@ -44,7 +46,7 @@ public class Items
 
     private static boolean hasData(String key)
     {
-        return ConfigHandler.getConfig().isSet(key + ".name") && ConfigHandler.getConfig().isSet(key + ".world") && ConfigHandler.getConfig().isSet(key + ".description") && ConfigHandler.getConfig().isSet(key + ".item") && ConfigHandler.getConfig().isSet(key + ".x") && ConfigHandler.getConfig().isSet(key + ".y") && ConfigHandler.getConfig().isSet(key + ".z") && ConfigHandler.getConfig().isSet(key + ".slot");
+        return ConfigHandler.getConfig().isSet(key + ".name") && ConfigHandler.getConfig().isSet(key + ".world") && ConfigHandler.getConfig().isSet(key + ".description") && ConfigHandler.getConfig().isSet(key + ".item") && ConfigHandler.getConfig().isSet(key + ".x") && ConfigHandler.getConfig().isSet(key + ".y") && ConfigHandler.getConfig().isSet(key + ".z") && ConfigHandler.getConfig().isSet(key + ".slot") && ConfigHandler.getConfig().isSet(key + ".pitch") && ConfigHandler.getConfig().isSet(key + ".yaw");
     }
 
     public static void remove(String name)

@@ -40,7 +40,7 @@ public class GUICommand implements CommandExecutor
 						desc = desc + args[i] + " ";
 					}
 
-					Manager.addItem(new GUIItem(name, item, desc, p.getWorld(), (int) p.getLocation().getX(), (int) p.getLocation().getY(), (int) p.getLocation().getZ(), slot));
+					Manager.addItem(new GUIItem(name, item, desc, p.getWorld(), (int) p.getLocation().getX(), (int) p.getLocation().getY(), (int) p.getLocation().getZ(), (int) p.getLocation().getPitch(), (int) p.getLocation().getYaw(), slot));
 
 					s.sendMessage(ChatColor.GREEN + "You added " + name + ChatColor.GREEN + " to the GUI!");
 					return true;
@@ -76,6 +76,7 @@ public class GUICommand implements CommandExecutor
 				{
 					s.sendMessage(ChatColor.DARK_GRAY + " - " + ChatColor.LIGHT_PURPLE + string);
 				}
+				return true;
 			}
 			s.sendMessage(ChatColor.RED + "Usage: /gui remove <name>");
 			s.sendMessage(ChatColor.RED + "Usage: /gui add <name> <material> <slot> <description>");
