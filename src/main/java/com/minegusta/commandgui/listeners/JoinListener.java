@@ -2,6 +2,7 @@ package com.minegusta.commandgui.listeners;
 
 import com.google.common.collect.Lists;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,9 +23,17 @@ public class JoinListener implements Listener{
         }
     };
 
+    private static final ItemStack[] armour = new ItemStack[]{new ItemStack(Material.LEATHER_HELMET), new ItemStack(Material.LEATHER_CHESTPLATE), new ItemStack(Material.LEATHER_LEGGINGS), new ItemStack(Material.LEATHER_BOOTS)};
+
     @EventHandler
     public void onConnect(PlayerJoinEvent e)
     {
+        if(e.getPlayer().getGameMode() == GameMode.CREATIVE) return;
+
+        e.getPlayer().getInventory().clear();
+
         e.getPlayer().setItemInHand(watch);
+
+        e.getPlayer().getInventory().setArmorContents(armour);
     }
 }
