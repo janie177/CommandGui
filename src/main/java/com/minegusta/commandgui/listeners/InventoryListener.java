@@ -44,7 +44,7 @@ public class InventoryListener
 
 	public boolean isGUIMenu()
 	{
-		return invName.equalsIgnoreCase(ChatColor.RED + "MG-DG Command GUI");
+		return invName.equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "DG"+ ChatColor.DARK_GRAY + "-" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "MG" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "CLUB");
 	}
 
 	public boolean isNotAir()
