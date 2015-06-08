@@ -12,7 +12,7 @@ public class Manager
         String s = item.name();
 
         ConfigHandler.getConfig().set(s + ".description", item.desc());
-        ConfigHandler.getConfig().set(s + ".item", item.getMaterial());
+        ConfigHandler.getConfig().set(s + ".item", item.getMaterial().name());
         ConfigHandler.getConfig().set(s + ".name", item.name());
         ConfigHandler.getConfig().set(s + ".world", item.getLocation().getWorld().getName());
         ConfigHandler.getConfig().set(s + ".x", (int) item.getLocation().getX());

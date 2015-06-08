@@ -3,10 +3,7 @@ package com.minegusta.commandgui.data;
 import com.google.common.collect.Maps;
 import com.minegusta.commandgui.GUIItem;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
@@ -40,21 +37,20 @@ public class Items
 
             GUIItem item = new GUIItem(name, material, desc, world, x, y, z, slot);
 
-            guiObjects.put(name, item);
+            guiObjects.put(ChatColor.translateAlternateColorCodes('&', item.name()), item);
         }
 
     }
 
     private static boolean hasData(String key)
     {
-        return ConfigHandler.getConfig().isSet(key + ".name") && ConfigHandler.getConfig().isSet(key + ".world") && ConfigHandler.getConfig().isSet(key + ".description") && ConfigHandler.getConfig().isSet(key + ".item") && ConfigHandler.getConfig().isSet(key + ".x") && ConfigHandler.getConfig().isSet(key + ".y") && ConfigHandler.getConfig().isSet(key + ".z");
+        return ConfigHandler.getConfig().isSet(key + ".name") && ConfigHandler.getConfig().isSet(key + ".world") && ConfigHandler.getConfig().isSet(key + ".description") && ConfigHandler.getConfig().isSet(key + ".item") && ConfigHandler.getConfig().isSet(key + ".x") && ConfigHandler.getConfig().isSet(key + ".y") && ConfigHandler.getConfig().isSet(key + ".z") && ConfigHandler.getConfig().isSet(key + ".slot");
     }
 
     public static void remove(String name)
     {
         if(guiObjects.containsKey(name)) {
             guiObjects.remove(name);
-
         }
     }
 
@@ -70,6 +66,10 @@ public class Items
 
     public static Location getLocation(String name)
     {
+        for(String s : guiObjects.keySet())
+        {
+            Bukkit.broadcastMessage(" - " + s);
+        }
         return guiObjects.get(name).getLocation();
     }
 }
