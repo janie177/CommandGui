@@ -47,6 +47,6 @@ public class GUICreator
 			slots = 27;
 		}
 
-		return Bukkit.createInventory(null, slots, ChatColor.RED + "MG-DG Command GUI");
+		return Bukkit.createInventory(null, slots, ChatColor.RED + "" + ChatColor.BOLD + "DG"+ ChatColor.DARK_GRAY + "-" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "MG" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "CLUB");
 	}
 }
