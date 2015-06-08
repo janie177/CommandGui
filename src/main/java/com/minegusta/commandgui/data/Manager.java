@@ -23,10 +23,10 @@ public class Manager
         ConfigHandler.saveConfig();
     }
 
-    public static void removeItem(GUIItem item)
+    public static void removeItem(String name)
     {
-        ConfigHandler.getConfig().set(item.name(), null);
-        Items.remove(item.name());
+        ConfigHandler.getConfig().set(name, null);
+        Items.remove(name);
 
         ConfigHandler.saveConfig();
     }

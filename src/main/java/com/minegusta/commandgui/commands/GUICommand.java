@@ -3,6 +3,7 @@ package com.minegusta.commandgui.commands;
 import com.minegusta.commandgui.GUICreator;
 import com.minegusta.commandgui.GUIItem;
 import com.minegusta.commandgui.data.Items;
+import com.minegusta.commandgui.data.Manager;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -39,7 +40,7 @@ public class GUICommand implements CommandExecutor
 						desc = desc + args[i] + " ";
 					}
 
-					Items.add(new GUIItem(name, item, desc, p.getWorld(),(int) p.getLocation().getX(), (int)p.getLocation().getY(),(int) p.getLocation().getZ(), slot));
+					Manager.addItem(new GUIItem(name, item, desc, p.getWorld(), (int) p.getLocation().getX(), (int) p.getLocation().getY(), (int) p.getLocation().getZ(), slot));
 
 					s.sendMessage(ChatColor.GREEN + "You added " + name + ChatColor.GREEN + " to the GUI!");
 					return true;
@@ -56,7 +57,7 @@ public class GUICommand implements CommandExecutor
 				try
 				{
 					String name = args[1];
-					Items.remove(name);
+					Manager.removeItem(name);
 					s.sendMessage(ChatColor.GREEN + "You removed " + name + ChatColor.GREEN + " from the GUI!");
 
 					return true;
