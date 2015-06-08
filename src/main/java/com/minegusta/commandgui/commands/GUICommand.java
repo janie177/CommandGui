@@ -22,7 +22,7 @@ public class GUICommand implements CommandExecutor
 
 		Player p = (Player) s;
 
-		if(s.isOp() && args.length > 0){
+		if(p.isOp() && args.length > 0){
 
 			if(args[0].equalsIgnoreCase("set"))
 			{
@@ -74,6 +74,9 @@ public class GUICommand implements CommandExecutor
 					s.sendMessage(ChatColor.DARK_GRAY + " - " + ChatColor.LIGHT_PURPLE + string);
 				}
 			}
+			s.sendMessage(ChatColor.RED + "Usage: /gui remove <name>");
+			s.sendMessage(ChatColor.RED + "Usage: /gui add <name> <material> <slot> <description>");
+			s.sendMessage(ChatColor.RED + "Usage: /gui list");
 			return true;
 		}
 
