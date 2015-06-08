@@ -5,6 +5,7 @@ import com.minegusta.commandgui.data.Items;
 import com.minegusta.commandgui.data.Manager;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
 import com.minegusta.commandgui.listeners.GUIListener;
+import com.minegusta.commandgui.listeners.JoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,6 +34,7 @@ public class Main extends JavaPlugin
 
 		//Listener
 		Bukkit.getPluginManager().registerEvents(new GUIListener(), this);
+		Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
 	}
 
 	@Override
