@@ -1,6 +1,8 @@
 package com.minegusta.commandgui.listeners;
 
+import com.minegusta.commandgui.data.Items;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -28,24 +30,11 @@ public class InventoryListener
 		return new InventoryListener(e);
 	}
 
-
-
-
-
 	//Methods
 
-	public String getCommand()
+	public Location getLocation()
 	{
-		List<String> lore = i.getItemMeta().getLore();
-		String command = "This is an error.";
-		for(String s : lore)
-		{
-			if(s.contains((ChatColor.YELLOW + "Command: ")))
-			{
-				command = s.replace(ChatColor.YELLOW + "Command: " + ChatColor.GRAY, "");
-			}
-		}
-		return command;
+		return Items.getLocation(i.getItemMeta().getDisplayName());
 	}
 
 	public Player getPlayer()

@@ -7,4 +7,4 @@ commands:
    gui:
       description: The Command Help Menu.
       usage: /GUI
-      aliases: [command, menu, mg, commands, cmd, cmds]
+      aliases: [command, ui, interface, openmenu, teleports, servers, menu, mg, commands, cmd, cmds]

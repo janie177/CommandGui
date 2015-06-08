@@ -1,6 +1,8 @@
 package com.minegusta.commandgui;
 
 import com.minegusta.commandgui.commands.GUICommand;
+import com.minegusta.commandgui.data.Items;
+import com.minegusta.commandgui.data.Manager;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
 import com.minegusta.commandgui.listeners.GUIListener;
 import org.bukkit.Bukkit;
@@ -22,6 +24,9 @@ public class Main extends JavaPlugin
 	{
 		//Config
 		ConfigHandler.createConfig();
+
+		//Load the items
+		Items.loadFromConfig();
 
 		//Commands
 		getCommand("gui").setExecutor(new GUICommand());

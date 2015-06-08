@@ -20,22 +20,21 @@ public class GUIListener implements Listener
 		InventoryListener inv = InventoryListener.listen(e);
 
 		if(!inv.isGUIMenu()){return;}
-		else if(!inv.isNotAir())
+		if(!inv.isNotAir())
 		{
 			inv.cancel();
 			inv.getPlayer().updateInventory();
+			return;
 		}
-		else if(!inv.hasNoItem())
+		if(!inv.hasNoItem())
 		{
 			inv.cancel();
 			inv.getPlayer().updateInventory();
+			return;
 		}
-		else
-		{
-			inv.cancel();
-			inv.closeInv();
-			Bukkit.dispatchCommand(inv.getPlayer(), inv.getCommand());
-		}
+		inv.cancel();
+		inv.closeInv();
+		inv.getPlayer().teleport(inv.getLocation());
 	}
 
 	@EventHandler

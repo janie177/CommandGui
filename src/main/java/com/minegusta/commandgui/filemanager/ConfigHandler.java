@@ -15,4 +15,9 @@ public class ConfigHandler
 		return Main.PLUGIN.getConfig();
 	}
 
+	public static void saveConfig()
+	{
+		Main.PLUGIN.saveConfig();
+	}
+
 }

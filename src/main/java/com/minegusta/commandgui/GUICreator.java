@@ -1,8 +1,10 @@
 package com.minegusta.commandgui;
 
+import com.minegusta.commandgui.data.Items;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -19,43 +21,16 @@ public class GUICreator
 
 	public static void createGUI(Player p)
 	{
-		int count = 0;
 		Set<String> keys = getConfig().getKeys(false);
 		Inventory inv = createInventory(keys.size());
-		for(String s : keys)
+		for(GUIItem item : Items.getItems().values())
 		{
-			if(!(hasPerm(s, p)) || !(hasData(s)))return;
-
-			String desc = getConfig().getString(s + ".description");
-			String command = getConfig().getString(s + ".command");
-			int id = getConfig().getInt(s + ".item");
-			String name = getConfig().getString(s + ".name");
-
-			GUIItem item = new GUIItem(name, id, desc, command);
 			ItemStack itemToAdd = item.assemble();
-
-			inv.setItem(count, itemToAdd);
-			count++;
+			inv.setItem(item.slot(), itemToAdd);
 		}
 		p.openInventory(inv);
 
 	}
-
-	//private methods for the creation
-
-	private static boolean hasPerm(String key, Player p)
-	{
-		return !(getConfig().isSet(key + ".permissions-node")) || p.hasPermission(getConfig().getString(key + ".permissions-node"));
-	}
-
-	private static boolean hasData(String key)
-	{
-		return getConfig().isSet(key + ".name") && getConfig().isSet(key + ".command") && getConfig().isSet(key + ".description") && getConfig().isSet(key + ".item");
-	}
-
-
-
-
 
 	private static Inventory createInventory(int slots)
 	{
