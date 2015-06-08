@@ -24,7 +24,7 @@ public class GUICommand implements CommandExecutor
 
 		if(p.isOp() && args.length > 0){
 
-			if(args[0].equalsIgnoreCase("set"))
+			if(args[0].equalsIgnoreCase("add"))
 			{
 				try
 				{
