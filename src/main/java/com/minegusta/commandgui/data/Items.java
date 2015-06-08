@@ -14,7 +14,7 @@ public class Items
 
     public static void add(GUIItem item)
     {
-        guiObjects.put(item.name(), item);
+        guiObjects.put(ChatColor.translateAlternateColorCodes('&', item.name()), item);
     }
 
     public static void loadFromConfig()
@@ -51,8 +51,8 @@ public class Items
 
     public static void remove(String name)
     {
-        if(guiObjects.containsKey(name)) {
-            guiObjects.remove(name);
+        if(guiObjects.containsKey(ChatColor.translateAlternateColorCodes('&', name))) {
+            guiObjects.remove(ChatColor.translateAlternateColorCodes('&',name));
         }
     }
 
