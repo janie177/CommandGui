@@ -5,6 +5,7 @@ import com.minegusta.commandgui.GUIItem;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 
 import java.util.Set;
@@ -29,7 +30,7 @@ public class Items
             if(!(hasData(s)))continue;
 
             String desc = ConfigHandler.getConfig().getString(s + ".description");
-            String material = ConfigHandler.getConfig().getString(s + ".item");
+            Material material = Material.valueOf(ConfigHandler.getConfig().getString(s + ".item").toUpperCase());
             String name = ConfigHandler.getConfig().getString(s + ".name");
             World world = Bukkit.getWorld(ConfigHandler.getConfig().getString(s + ".world"));
             int x = ConfigHandler.getConfig().getInt(s + ".x");
