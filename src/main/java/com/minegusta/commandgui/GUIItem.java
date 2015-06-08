@@ -23,7 +23,7 @@ public class GUIItem
 		this.name = name;
 		this.material = material;
 		this.desc = description;
-		this.destination = new Location(w, x, y, z, yaw, pitch);
+		this.destination = new Location(w, x, y, z, (float) yaw, (float) pitch);
 		this.slot = slot;
 	}
 

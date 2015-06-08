@@ -68,10 +68,6 @@ public class Items
 
     public static Location getLocation(String name)
     {
-        for(String s : guiObjects.keySet())
-        {
-            Bukkit.broadcastMessage(" - " + s);
-        }
         return guiObjects.get(name).getLocation();
     }
 }
