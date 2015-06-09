@@ -40,6 +40,12 @@ public class GUICommand implements CommandExecutor
 						desc = desc + args[i] + " ";
 					}
 
+					if(slot > 35)
+					{
+						s.sendMessage(ChatColor.RED + "Slot cannot be higher than 35.");
+						return true;
+					}
+
 					Manager.addItem(new GUIItem(name, item, desc, p.getWorld(), (int) p.getLocation().getX(), (int) p.getLocation().getY(), (int) p.getLocation().getZ(), (int) p.getLocation().getPitch(), (int) p.getLocation().getYaw(), slot));
 
 					s.sendMessage(ChatColor.GREEN + "You added " + name + ChatColor.GREEN + " to the GUI!");

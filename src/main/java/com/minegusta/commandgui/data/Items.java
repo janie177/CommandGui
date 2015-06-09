@@ -1,6 +1,7 @@
 package com.minegusta.commandgui.data;
 
 import com.google.common.collect.Maps;
+import com.minegusta.commandgui.GUICreator;
 import com.minegusta.commandgui.GUIItem;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
 import org.bukkit.*;
@@ -41,6 +42,8 @@ public class Items
 
             guiObjects.put(ChatColor.translateAlternateColorCodes('&', item.name()), item);
         }
+
+        GUICreator.setMaxSlot();
 
     }
 

@@ -1,7 +1,9 @@
 package com.minegusta.commandgui.data;
 
+import com.minegusta.commandgui.GUICreator;
 import com.minegusta.commandgui.GUIItem;
 import com.minegusta.commandgui.filemanager.ConfigHandler;
+import com.minegusta.commandgui.listeners.GUIListener;
 
 public class Manager
 {
@@ -23,6 +25,8 @@ public class Manager
         ConfigHandler.getConfig().set(s + ".slot", item.slot());
 
         ConfigHandler.saveConfig();
+
+        GUICreator.setMaxSlot();
     }
 
     public static void removeItem(String name)
@@ -31,5 +35,7 @@ public class Manager
         Items.remove(name);
 
         ConfigHandler.saveConfig();
+
+        GUICreator.setMaxSlot();
     }
 }

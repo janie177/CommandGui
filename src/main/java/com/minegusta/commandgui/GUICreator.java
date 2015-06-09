@@ -18,11 +18,22 @@ public class GUICreator
 	{
 		return ConfigHandler.getConfig();
 	}
+	private static int maxSlot = 0;
+
+	public static void setMaxSlot()
+	{
+		for(GUIItem item : Items.getItems().values())
+		{
+			if(item.slot() > maxSlot)
+			{
+				maxSlot = item.slot();
+			}
+		}
+	}
 
 	public static void createGUI(Player p)
 	{
-		Set<String> keys = getConfig().getKeys(false);
-		Inventory inv = createInventory(keys.size());
+		Inventory inv = createInventory(maxSlot);
 		for(GUIItem item : Items.getItems().values())
 		{
 			ItemStack itemToAdd = item.assemble();
@@ -45,6 +56,10 @@ public class GUICreator
 		if(slots > 18)
 		{
 			slots = 27;
+		}
+		if(slots > 27)
+		{
+			slots = 36;
 		}
 
 		return Bukkit.createInventory(null, slots, ChatColor.RED + "" + ChatColor.BOLD + "DG"+ ChatColor.DARK_GRAY + "-" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "MG" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "CLUB");
