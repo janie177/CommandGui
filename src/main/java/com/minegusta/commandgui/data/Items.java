@@ -16,6 +16,7 @@ public class Items
     public static void add(GUIItem item)
     {
         guiObjects.put(ChatColor.translateAlternateColorCodes('&', item.name()), item);
+        GUICreator.setMaxSlot();
     }
 
     public static void loadFromConfig()
@@ -56,6 +57,7 @@ public class Items
     {
         if(guiObjects.containsKey(ChatColor.translateAlternateColorCodes('&', name))) {
             guiObjects.remove(ChatColor.translateAlternateColorCodes('&',name));
+            GUICreator.setMaxSlot();
         }
     }
 

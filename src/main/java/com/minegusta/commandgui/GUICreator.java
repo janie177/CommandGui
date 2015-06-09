@@ -14,10 +14,6 @@ import java.util.Set;
 
 public class GUICreator
 {
-	private static FileConfiguration getConfig()
-	{
-		return ConfigHandler.getConfig();
-	}
 	private static int maxSlot = 0;
 
 	public static void setMaxSlot()
@@ -33,7 +29,7 @@ public class GUICreator
 
 	public static void createGUI(Player p)
 	{
-		Inventory inv = createInventory(maxSlot);
+		Inventory inv = createInventory(maxSlot + 1);
 		for(GUIItem item : Items.getItems().values())
 		{
 			ItemStack itemToAdd = item.assemble();
@@ -45,21 +41,9 @@ public class GUICreator
 
 	private static Inventory createInventory(int slots)
 	{
-		if(slots < 9)
+		if(slots % 9 != 0)
 		{
-			slots = 9;
-		}
-		if(slots > 9)
-		{
-			slots = 18;
-		}
-		if(slots > 18)
-		{
-			slots = 27;
-		}
-		if(slots > 27)
-		{
-			slots = 36;
+			slots = slots + 9 - (slots % 9);
 		}
 
 		return Bukkit.createInventory(null, slots, ChatColor.RED + "" + ChatColor.BOLD + "DG"+ ChatColor.DARK_GRAY + "-" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "MG" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "CLUB");
