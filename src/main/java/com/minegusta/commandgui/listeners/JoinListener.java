@@ -1,6 +1,7 @@
 package com.minegusta.commandgui.listeners;
 
 import com.google.common.collect.Lists;
+import com.minegusta.commandgui.util.WorldCheck;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -29,10 +30,11 @@ public class JoinListener implements Listener{
     public void onConnect(PlayerJoinEvent e)
     {
         if(e.getPlayer().getGameMode() == GameMode.CREATIVE) return;
+        if(!WorldCheck.isEnabled(e.getPlayer().getWorld()))return;
 
         e.getPlayer().getInventory().clear();
 
-        e.getPlayer().setItemInHand(watch);
+        e.getPlayer().getInventory().setItem(36, watch);
 
         e.getPlayer().getInventory().setArmorContents(armour);
     }
