@@ -5,8 +5,10 @@ import com.minegusta.commandgui.util.WorldCheck;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -32,10 +34,25 @@ public class JoinListener implements Listener{
         if(e.getPlayer().getGameMode() == GameMode.CREATIVE) return;
         if(!WorldCheck.isEnabled(e.getPlayer().getWorld()))return;
 
-        e.getPlayer().getInventory().clear();
+        spawnPlayer(e.getPlayer());
+    }
 
-        e.getPlayer().getInventory().addItem(watch);
+    @EventHandler
+    public void onWorldSwitch(PlayerChangedWorldEvent e)
+    {
+        if(!WorldCheck.isEnabled(e.getPlayer().getWorld()))return;
+        if(e.getPlayer().getGameMode() == GameMode.CREATIVE)return;
+        spawnPlayer(e.getPlayer());
+    }
 
-        e.getPlayer().getInventory().setArmorContents(armour);
+    private void spawnPlayer(Player p)
+    {
+        p.getInventory().clear();
+
+        p.getInventory().addItem(watch);
+
+        p.getInventory().setArmorContents(armour);
+
+        p.teleport(p.getWorld().getSpawnLocation());
     }
 }
