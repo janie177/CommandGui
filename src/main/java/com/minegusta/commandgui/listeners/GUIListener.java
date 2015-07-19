@@ -34,7 +34,9 @@ public class GUIListener implements Listener
 		}
 		inv.cancel();
 		inv.closeInv();
-		inv.getPlayer().teleport(inv.getLocation());
+		try {
+			inv.getPlayer().teleport(inv.getLocation());
+		} catch (Exception ignored){}
 	}
 
 	@EventHandler
