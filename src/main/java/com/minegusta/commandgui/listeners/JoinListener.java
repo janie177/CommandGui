@@ -34,7 +34,7 @@ public class JoinListener implements Listener{
 
         e.getPlayer().getInventory().clear();
 
-        e.getPlayer().getInventory().setItem(36, watch);
+        e.getPlayer().getInventory().addItem(watch);
 
         e.getPlayer().getInventory().setArmorContents(armour);
     }
