@@ -26,8 +26,6 @@ public class JoinListener implements Listener{
         }
     };
 
-    private static final ItemStack[] armour = new ItemStack[]{new ItemStack(Material.LEATHER_HELMET), new ItemStack(Material.LEATHER_CHESTPLATE), new ItemStack(Material.LEATHER_LEGGINGS), new ItemStack(Material.LEATHER_BOOTS)};
-
     @EventHandler
     public void onConnect(PlayerJoinEvent e)
     {
@@ -50,8 +48,6 @@ public class JoinListener implements Listener{
         p.getInventory().clear();
 
         p.getInventory().addItem(watch);
-
-        p.getInventory().setArmorContents(armour);
 
         p.teleport(p.getWorld().getSpawnLocation());
     }
