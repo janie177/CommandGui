@@ -46,6 +46,6 @@ public class GUICreator
 			slots = slots + 9 - (slots % 9);
 		}
 
-		return Bukkit.createInventory(null, slots, ChatColor.RED + "" + ChatColor.BOLD + "DG"+ ChatColor.DARK_GRAY + "-" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "MG" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "CLUB");
+		return Bukkit.createInventory(null, slots, ChatColor.GOLD + "" + ChatColor.BOLD +  "Mine" + ChatColor.DARK_PURPLE + "" + ChatColor.BOLD +  "Gusta" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "GUI");
 	}
 }
