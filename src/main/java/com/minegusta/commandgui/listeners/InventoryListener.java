@@ -44,7 +44,7 @@ public class InventoryListener
 
 	public boolean isGUIMenu()
 	{
-		return invName.equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "DG"+ ChatColor.DARK_GRAY + "-" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "MG" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "CLUB");
+		return invName.equalsIgnoreCase(ChatColor.GOLD + "" + ChatColor.BOLD +  "Mine" + ChatColor.DARK_PURPLE + "" + ChatColor.BOLD +  "Gusta" + ChatColor.DARK_GRAY + " " + ChatColor.BOLD + "GUI");
 	}
 
 	public boolean isNotAir()
